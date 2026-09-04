@@ -32,6 +32,7 @@ Sistem ini memiliki berbagai modul manajemen data publik yang sangat lengkap, an
 ## 📋 Persyaratan Sistem
 
 Pastikan environment Anda memenuhi persyaratan berikut sebelum melakukan instalasi:
+
 - PHP >= 8.1
 - Composer 2.x
 - Node.js & npm (untuk Vite)
@@ -42,32 +43,38 @@ Pastikan environment Anda memenuhi persyaratan berikut sebelum melakukan instala
 Ikuti langkah-langkah di bawah ini untuk menjalankan project di local server Anda:
 
 1. **Clone repository ini**
-   ```bash
-   git clone https://github.com/username/repository-anda.git
-   cd repository-anda
-   ```
 
+   ```bash
+   git clone
+   cd repository
+   ```
 2. **Install dependensi PHP via Composer**
+
    ```bash
    composer install
    ```
-
 3. **Install dependensi Node (Frontend) & Build Assets**
+
    ```bash
    npm install
    npm run build
    ```
-
 4. **Konfigurasi Environment Variable**
+
    - Salin file `.env.example` dan ubah namanya menjadi `.env`
+
    ```bash
    cp .env.example .env
    ```
+
    - Generate application key:
+
    ```bash
    php artisan key:generate
    ```
+
    - Buka file `.env` lalu sesuaikan konfigurasi database Anda:
+
    ```env
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
@@ -76,23 +83,25 @@ Ikuti langkah-langkah di bawah ini untuk menjalankan project di local server And
    DB_USERNAME=root
    DB_PASSWORD=
    ```
-
 5. **Migrasi dan Seeding Database**
    Jalankan perintah ini untuk membuat struktur tabel secara otomatis dan memasukkan data admin default:
+
    ```bash
    php artisan migrate:fresh --seed
    ```
-
 6. **Jalankan Aplikasi**
    Jalankan server lokal Laravel (atau bisa langsung diakses dari `appdinas.test` jika menggunakan Laragon):
+
    ```bash
    php artisan serve
    ```
+
    Aplikasi dapat diakses pada browser melalui `http://localhost:8000`.
 
 ## 👤 Akun Default (Seeder)
 
 Gunakan kredensial berikut untuk login ke halaman Dashboard Admin (jika belum diubah):
+
 - **Email:** `admin@gmail.com`
 - **Password:** Sesuai konfigurasi bawaan pada `AdminSeeder`.
 
